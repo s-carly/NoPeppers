@@ -1,22 +1,39 @@
 body {
     margin: 0 auto;
     width: 90%;
-    background-color: rgb(238, 238, 228);
+    background-color: rgb(243, 243, 231);
 }
 
-h1 {
+/* h1 {
     display: block;
-    -webkit-text-stroke: 1px black;
-    color: white;
-    text-align: center;
+    color: rgb(247, 220, 148);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 80px;
+    text-align: left;
     padding: 80px;
     margin: 10px;
+    background-image: url("1.jpg");
+} */
+
+.topbanner img {
+    position: relative;
+    display: flex;
+    margin: auto;
+    width: 100%;
+    z-index: -1;
+}
+
+.icon img {
+    position: absolute;
+    right: 200px;
+    top: 312px;
+    width: 10em;
+    z-index: 1;
 }
 
 .navbar {
     background-color: rgb(102, 156, 138);
     overflow: hidden;
-    text-align: center;
 }
 
 .navbar a {
@@ -42,7 +59,7 @@ h1 {
     height: 100%;
     width: 200px;
     position: fixed;
-    top: 40%;
+    top: 60%;
     left: 20;
     overflow-x: hidden;
     padding-top: 20px;
