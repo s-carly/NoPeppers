@@ -18,5 +18,5 @@ class IndexView(generic.ListView):
 
 class RestView(generic.DetailView):
     model = Restaurant
-    # template_name = 'blogs/restaurant.html'
+    template_name = 'blogs/page.html'
 

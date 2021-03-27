@@ -1,27 +1,28 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
         <title> No Peppers </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1," />
-        <link rel="stylesheet" href="../static/blogs/reset.css" type="text/css"/>
-        <link rel="stylesheet" href="../static/blogs/page.css" type="text/css"/>
+        <link rel="stylesheet" href="{% static 'blogs/reset.css' %}" type="text/css"/>
+        <link rel="stylesheet" href="{% static 'blogs/page.css' %}" type="text/css"/>
     </head>
     <body>
         <header>
             <div class="topbanner">
-                <img src="../static/blogs/images/3.jpg" alt="banner"/>
+                <img src="{% static 'blogs/images/3.jpg' %}" alt="banner"/>
             </div>
             <!-- user profile -->
             <div class="icon">
-                <img src="../static/blogs/images/2.jpg" class="icon" alt="user icon"/>
+                <img src="{% static 'blogs/images/2.jpg' %}" class="icon" alt="user icon"/>
             </div>
             <!-- this is the head navigation bar-->
             <nav>
                 <div class="navbar">
-                    <a href="index.html">Home</a>
-                    <a href="   ">Feed</a>
-                    <a class="active" href="page.html">Feeling Lucky</a>
+                    <a href="{% url 'blogs:index' %}">Home</a>
+                    <a class="active" href="{% url 'blogs:page' 1 %}">Feeling Lucky</a>
                 </div>
             </nav>
         </header>
@@ -68,27 +69,21 @@
         <section>
             <div class="blogfeed">
                 <div class="post">
-                    <div class="foodimg">
-                        <img src="../static/blogs/images/4.jpg" alt="egg-avocado"/>
-                    </div>
                     <div class="content">
                         <header class="align-center">
-                            <h2>RESTAURANT</h2>
-                            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices 
-                                posuere cubilia curae; Praesent justo ipsum, fermentum eget massa
-                                 at, euismod semper risus.</p>
+                            <h2>{{ restaurant.name }}</h2>
                         </header>
-                        <hr />
-                        <p>Thai, Vegetarian Friendly, Gluten Free</p>
-                        <p>Praesent id posuere orci, in fringilla lorem. Ut eu ultricies sem.
-                            Mauris faucibus velit nibh, quis hendrerit elit laoreet ut. Proin
-                            sem diam, blandit sollicitudin egestas sed, elementum at diam. 
-                            Nunc non diam a nulla vehicula tincidunt. Donec molestie massa sit amet
-                            purus ultricies, volutpat dapibus est interdum. Phasellus nisi erat, 
-                            convallis et tortor non, vestibulum volutpat nunc. Cras eleifend risus
-                            non leo mollis, ut interdum ligula commodo.
-                        </p>
+                        <hr />                      
+                        <p>{{ restaurant.cuisine }}</p>
+                        <p>{{ restaurant.location }}</p>
+                        <p>{{ restaurant.capacity }}</p>
+                        <p>{{ restaurant.hours }}</p>
                     </div>
+                    <!-- 
+                    <div class="foodimg">
+                        <img src="  " alt="egg-avocado"/>
+                    </div>
+                    -->
                 </div>
             </div>
         </section>
