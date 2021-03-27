@@ -6,7 +6,7 @@ class Restaurant(models.Model):
     location = models.CharField(max_length=200, default="Not specified")
     cuisine = models.CharField(max_length=50)
     capacity = models.IntegerField(default=0)
-    seated = models.IntegerField(default=0)
+    hours = models.CharField(max_length=50, default="Not provided")
 
     def check_cuisine(self, cuisine):
         if self.cuisine == cuisine:
