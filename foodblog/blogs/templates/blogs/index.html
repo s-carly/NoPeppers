@@ -1,29 +1,27 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
         <title> No Peppers </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1," />
-        <link rel="stylesheet" href="{% static 'blogs/reset.css' %}" type="text/css"/>
-        <link rel="stylesheet" href="{% static 'blogs/foodblog.css' %}" type="text/css"/>
+        <link rel="stylesheet" href="reset.css" type="text/css"/>
+        <link rel="stylesheet" href="foodblog.css" type="text/css"/>
     </head>
     <body>
         <header>
             <div class="topbanner">
-                <img src="{% static 'blogs/images/3.jpg' %}" alt="banner"/>
+                <img src="3.jpg" alt="banner"/>
             </div>
             <!-- user profile -->
             <div class="icon">
-                <img src="{% static 'blogs/images/2.jpg' %}" class="icon" alt="user icon"/>
+                <img src="2.jpg" class="icon" alt="user icon"/>
             </div>
             <!-- this is the head navigation bar-->
             <nav>
                 <div class="navbar">
-                    <a class="active" href="#home">Home</a>
+                    <a class="active" href="index.html">Home</a>
                     <a href="   ">Feed</a>
-                    <a href="   ">Feeling Lucky</a>
+                    <a href="page.html">Feeling Lucky</a>
                 </div>
             </nav>
         </header>
@@ -69,26 +67,45 @@
         <!-- blog post content starts here-->
         <section>
             <div class="blogfeed">
-                {% for post in posts_list %}
                 <div>
                     <div class="post">
-                        <header class="align-center">
-                            <h1>{{ post.restaurant.name }}</h1>
-                        </header>
                         <div class="image fit">
-                            <img src="{{ post.image.url }}" alt="{{ post.restaurant.name }}"
-                            width="600px" height="300px"/>
+                            <img src="  " alt="" />
                         </div>
                         <div class="content">
                             <header class="align-center">
-                                <p>{{ post.restaurant.description }}</p>
+                                <h2>RESTAURANT</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar in neque id suscipit. Donec id suscipit odio.</p>
                             </header>
                             <hr />
-                            <p> {{ post.content }} </p>
+                            <p>Aenean eu metus tortor. In tellus massa, aliquet ornare auctor ut, convallis eu est.
+                                Suspendisse blandit ex et libero ornare, a aliquam erat tincidunt. Nulla justo nulla,
+                                condimentum et fermentum a, molestie et metus. Phasellus posuere justo in eleifend facilisis. 
+                                Phasellus laoreet, eros sed posuere euismod, nisi felis eleifend est, sit amet egestas felis 
+                                nulla sit amet justo. Integer sapien odio, vestibulum sit amet metus ac, aliquam volutpat elit.</p>
                         </div>
                     </div>
                 </div>
-                {% endfor %}
+
+                <div>
+                    <div class="post">
+                        <div class="image fit">
+                            <img src="  " alt="" />
+                        </div>
+                        <div class="content">
+                            <header class=" ">
+                                <h2>RESTAURANT</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </header>
+                            <hr />
+                            <p>Nam justo ex, venenatis quis sapien ac, venenatis molestie leo. Morbi efficitur arcu
+                                 quis auctor ultricies. Pellentesque aliquam mauris ac aliquam feugiat. Integer et
+                                  erat ut sem accumsan rhoncus a ut ipsum. Phasellus a elementum massa, sed scelerisque
+                                   erat. Etiam molestie nibh in rhoncus placerat. Etiam ac augue a urna vehicula rutrum.
+                                    Phasellus egestas fringilla tortor, a sodales velit vestibulum non. Fusce ut purus dolor.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     
