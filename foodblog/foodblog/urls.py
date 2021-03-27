@@ -16,7 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from . import settings
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 urlpatterns = [
 	path('blogs/', include('blogs.urls')),
     path('admin/', admin.site.urls),
 ]
+
+
+# https://matthiasomisore.com/web-programming/display-image-in-a-django-template-using-imagefield/
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

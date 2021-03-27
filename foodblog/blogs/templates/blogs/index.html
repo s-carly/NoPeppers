@@ -1,20 +1,22 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8"/>
         <title> No Peppers </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1," />
-        <link rel="stylesheet" href="reset.css" type="text/css"/>
-        <link rel="stylesheet" href="foodblog.css" type="text/css"/>
+        <link rel="stylesheet" href="{% static 'blogs/reset.css' %}" type="text/css"/>
+        <link rel="stylesheet" href="{% static 'blogs/foodblog.css' %}" type="text/css"/>
     </head>
     <body>
         <header>
             <div class="topbanner">
-                <img src="3.jpg" alt="banner"/>
+                <img src="{% static 'blogs/images/3.jpg' %}" alt="banner"/>
             </div>
             <!-- user profile -->
             <div class="icon">
-                <img src="2.jpg" class="icon" alt="user icon"/>
+                <img src="{% static 'blogs/images/2.jpg' %}" class="icon" alt="user icon"/>
             </div>
             <!-- this is the head navigation bar-->
             <nav>
@@ -67,37 +69,26 @@
         <!-- blog post content starts here-->
         <section>
             <div class="blogfeed">
+                {% for post in posts_list %}
                 <div>
                     <div class="post">
+                        <header class="align-center">
+                            <h1>{{ post.restaurant.name }}</h1>
+                        </header>
                         <div class="image fit">
-                            <img src="  " alt="" />
+                            <img src="{{ post.image.url }}" alt="{{ post.restaurant.name }}"
+                            width="600px" height="300px"/>
                         </div>
                         <div class="content">
                             <header class="align-center">
-                                <h2>RESTAURANT</h2>
-                                <p>brief description</p>
+                                <p>{{ post.restaurant.description }}</p>
                             </header>
                             <hr />
-                            <p> this is the content </p>
+                            <p> {{ post.content }} </p>
                         </div>
                     </div>
                 </div>
-
-                <div>
-                    <div class="post">
-                        <div class="image fit">
-                            <img src="  " alt="" />
-                        </div>
-                        <div class="content">
-                            <header class=" ">
-                                <h2>RESTAURANT</h2>
-                                <p>brief description</p>
-                            </header>
-                            <hr />
-                            <p> this is the content </p>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </section>
     
