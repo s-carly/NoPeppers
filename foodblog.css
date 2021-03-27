@@ -1,0 +1,67 @@
+body {
+    margin: 0 auto;
+    width: 90%;
+    background-color: rgb(238, 238, 228);
+}
+
+h1 {
+    display: block;
+    -webkit-text-stroke: 1px black;
+    color: white;
+    text-align: center;
+    padding: 80px;
+    margin: 10px;
+}
+
+.navbar {
+    background-color: rgb(102, 156, 138);
+    overflow: hidden;
+    text-align: center;
+}
+
+.navbar a {
+    display: inline-block;
+    color: #f2f2f2;
+    padding: 14px 40px;
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0px 50px;
+}
+
+.navbar a:hover {
+    background-color: rgb(122, 179, 134);
+    color: black;
+}
+
+.navbar a.active {
+    background-color: #2b7961;
+    color: white;
+}
+
+.sidebar {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 40%;
+    left: 20;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.blogfeed {
+    margin-left: 200px;
+    font-size: 20px;
+}
+
+.post {
+    display: block;
+    margin: 60px 10px;
+    padding: 30px;
+    background-color: white;
+}
+
+
+label {
+    position: relative;
+    display: block;
+}
